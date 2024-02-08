@@ -1,0 +1,16 @@
+name = "svelteapp"
+# account_id = "<your-account-id>" # Wranglerでログインしていれば不要そう
+
+main = "./.cloudflare/worker.js"
+site.bucket = "./.cloudflare/public"
+
+build.command = "npm run build"
+
+compatibility_date = "2023-10-30"
+workers_dev = true
+
+[[d1_databases]]
+binding = "DB"
+database_name = "sample_d1"
+database_id = "<your-database-id>"
+preview_database_id = "<your-preview-database-id>"

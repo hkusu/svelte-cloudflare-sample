@@ -1,0 +1,31 @@
+{
+  "name": "svelteapp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "build": "vite build",
+    "dev": "wrangler dev",
+    "dev:remote": "wrangler dev --remote",
+    "deploy": "wrangler deploy",
+    "sync": "svelte-kit sync",
+    "lint": "biome check ./src || s=$?; svelte-kit sync && svelte-check --tsconfig ./jsconfig.json || s=$?; exit $s",
+    "format": "biome check --linter-enabled=false --apply ./src",
+    "test": "npm run test:unit && npm run test:integration",
+    "test:unit": "vitest",
+    "test:integration": "playwright test"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.4.1",
+    "@cloudflare/workers-types": "^4.20231218.0",
+    "@playwright/test": "^1.28.1",
+    "@sveltejs/adapter-cloudflare-workers": "^2.0.1",
+    "@sveltejs/kit": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^3.0.0",
+    "svelte": "^4.2.7",
+    "svelte-check": "^3.6.2",
+    "vite": "^5.0.3",
+    "vitest": "^1.0.0",
+    "wrangler": "^3.22.1"
+  },
+  "type": "module"
+}

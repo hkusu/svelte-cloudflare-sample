@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS Todos;
+
+CREATE TABLE Todos (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  content TEXT,
+  status TEXT,
+  created TIMESTAMP DEFAULT (datetime(CURRENT_TIMESTAMP,'localtime'))
+);
